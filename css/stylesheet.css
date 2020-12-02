@@ -1,0 +1,49 @@
+body {
+    padding-top: 50px;
+}
+
+h1,
+h2 {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+h3 {
+    font-family: "Lora", serif;
+    color: #ffffff;
+}
+
+h4 {
+    font-family: "Open Sans Condensed", sans-serif;
+    color: #ffffff;
+}
+
+span {
+    font-size: 100px;
+}
+
+#search-button {
+    background-color: #c82333;
+    color: white;
+    box-shadow: 0px;
+    border: 0px;
+    border-radius: 4px;
+    padding: 6px 12px 10px;
+}
+
+#humidity {
+    font-size: 24px;
+}
+
+#wind {
+    font-size: 24px;
+}
+
+.card {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 2px 1px 8px;
+}
+
+.head-colour {
+    background-color: #f6f6f6;
+}

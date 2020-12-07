@@ -21,6 +21,10 @@ span {
     font-size: 100px;
 }
 
+small{
+    margin: 15px;
+}
+
 #search-button {
     background-color: #c82333;
     color: white;

@@ -51,3 +51,15 @@ small{
 .head-colour {
     background-color: #f6f6f6;
 }
+
+#description{
+    color: #AEAEAF;
+    text-transform: capitalize;
+    font-size: 24px;
+}
+
+#current-date{
+    color: #AEAEAF;
+    font-size: 24px;
+    margin-bottom: 0;
+}

@@ -3,6 +3,8 @@ function displayTemperature(response) {
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     let cityElement = document.querySelector("#city-name");
     cityElement.innerHTML = response.data.name;
+    let descriptionElement = document.querySelector("#description");
+    descriptionElement.innerHTML = response.data.weather[0].description;
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
     let windElement = document.querySelector("#wind")

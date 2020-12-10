@@ -68,10 +68,19 @@ function convertToFahrenheit(event){
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function convertToCelsius(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
 let form = document.querySelector("#form-search");
 form.addEventListener("submit", searchCity);
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", convertToFahrenheit);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", convertToCelsius);
 
 let celsiusTemp = null;

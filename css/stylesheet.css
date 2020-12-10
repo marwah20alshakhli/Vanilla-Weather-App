@@ -25,6 +25,14 @@ small{
     margin: 15px;
 }
 
+img{
+    display: inline;
+}
+
+li{
+    list-style-type: none;
+}
+
 #search-button {
     background-color: #c82333;
     color: white;
@@ -35,11 +43,14 @@ small{
 }
 
 #humidity {
-    font-size: 24px;
+    font-size: 15px;
+    margin-top: 0;
+    color: #AEAEAF
 }
 
 #wind {
-    font-size: 24px;
+    font-size: 15px;
+    color: #AEAEAF
 }
 
 .card {
@@ -55,11 +66,11 @@ small{
 #description{
     color: #AEAEAF;
     text-transform: capitalize;
-    font-size: 24px;
+    font-size: 15px;
+    margin-bottom: 0px;
 }
 
 #current-date{
     color: #AEAEAF;
-    font-size: 24px;
-    margin-bottom: 0;
+    font-size: 15px;
 }

@@ -84,3 +84,10 @@ a:hover{
     color: #AEAEAF;
     font-size: 15px;
 }
+
+.card-body.text-center {
+    background-color: #1f6f8b;
+    border-radius: 4px;
+    box-shadow: 2px 1px 8px;
+    width: 100%;
+  }

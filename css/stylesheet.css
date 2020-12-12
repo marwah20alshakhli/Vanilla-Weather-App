@@ -31,10 +31,16 @@ img{
 
 li{
     list-style-type: none;
+    color:  #AEAEAF;
 }
 
 a{
     cursor: default;
+    color: #151E3D;
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 #search-button {

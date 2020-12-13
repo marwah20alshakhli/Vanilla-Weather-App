@@ -17,10 +17,21 @@ function displayTemperature(response) {
     celsiusTemp = response.data.main.temp;
 }
 
-function displayForecast(response){
-    console.log(response.data);
+function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
-    let forecast = response.data.list[0];
+    let forecast = null;
+    for (let index = 0; index < 6; index++) {
+        forecast = response.data.list[index];
+        forecastElement.innerHTML += 
+        `<div class="col">
+            <h3>${formatHours(forecast.dt*1000)}</h3>
+                <h4>
+                    <strong>${Math.round(forecast.main.temp_max)}°</strong>
+                    ${Math.round(forecast.main.temp_min)}°
+                </h4>
+                <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+        </div>`;
+    }
 }
 
 function info(city) {
@@ -30,6 +41,19 @@ function info(city) {
 
     apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayForecast);
+}
+
+function formatHours(timestamp){
+    let currentDate = new Date();
+    let hours = currentDate.getHours();
+    if (hours < 10) {
+        hours = `0${hours}`;
+    }
+    let minutes = currentDate.getMinutes();
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+    }
+return `${hours}:${minutes}`;
 }
 
 function formatDate() {
@@ -71,14 +95,14 @@ function searchCity(event) {
     info(cityInput.value)
 }
 
-function convertToFahrenheit(event){
+function convertToFahrenheit(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
-    let fahrenheitTemperature = (celsiusTemp*9)/5+32;
+    let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-function convertToCelsius(event){
+function convertToCelsius(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusTemp);
@@ -95,4 +119,4 @@ celsius.addEventListener("click", convertToCelsius);
 
 let celsiusTemp = null;
 
-info("Ostend");
+info("Tokyo");

@@ -1,9 +1,3 @@
-function info(city) {
-    let apiKey = "125ae54afb30daf43aec3cdb943d26b0";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayTemperature);
-}
-
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -21,6 +15,21 @@ function displayTemperature(response) {
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].icon);
     celsiusTemp = response.data.main.temp;
+}
+
+function displayForecast(response){
+    console.log(response.data);
+    let forecastElement = document.querySelector("#forecast");
+    let forecast = response.data.list[0];
+}
+
+function info(city) {
+    let apiKey = "125ae54afb30daf43aec3cdb943d26b0";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
 }
 
 function formatDate() {

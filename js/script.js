@@ -85,3 +85,5 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convertToCelsius);
 
 let celsiusTemp = null;
+
+info("Ostend");

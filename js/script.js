@@ -24,7 +24,7 @@ function displayForecast(response) {
     for (let index = 0; index < 6; index++) {
         forecast = response.data.list[index];
         forecastElement.innerHTML += `
-            <div class="col">
+            <div class="col-2">
             <h3>${formatHours(forecast.dt*1000)}</h3>
                 <h4>
                     <strong>${Math.round(forecast.main.temp_min)}°</strong>
@@ -117,8 +117,10 @@ function getCurrentLocation(event) {
 function searchLocation(position) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-
     axios.get(apiUrl).then(displayTemperature);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
 }
 
 let currentLocationButton = document.querySelector("#current-location");
